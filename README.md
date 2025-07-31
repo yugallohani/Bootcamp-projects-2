@@ -4,6 +4,7 @@ This repository contains assignments for Yugal Lohani's Bootcamp. Each assignmen
 
 ## Assignments & Live Demos
 - **assign - 11:** [Counter App](https://assign11-mu.vercel.app/)
+- **assign - 12:** [Tic-Tac-Toe](https://assign12-beta.vercel.app/)
 
 For assignments 1 to 10, visit this repository: [Bootcamp-Projects](https://github.com/yugallohani/Bootcamp-Projects)
 
