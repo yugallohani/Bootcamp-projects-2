@@ -1,4 +1,4 @@
-# Assign 12: Yugal’s Tic-Tac-Toe
+# Assignment 12: Yugal’s Tic-Tac-Toe
 
 This project is a modern, interactive Tic-Tac-Toe game built with HTML, CSS, and JavaScript. It features a stylish UI, smooth animations, and responsive design, making it fun and easy to play on any device.
 
