@@ -1,4 +1,4 @@
-# Assign 11: Yugal's Counter App
+# Assignment 11: Yugal's Counter App
 
 This project is a simple and modern counter application built using HTML, CSS, and JavaScript. It is designed as part of a bootcamp assignment to demonstrate interactive web development skills.
 
