@@ -1,4 +1,4 @@
-# Assign 14: Yugal’s Weather App (React)
+# Assignment 14: Yugal’s Weather App (React)
 
 This project is a modern weather application built with React. It allows users to search for real-time weather information for any city worldwide, displaying temperature, weather conditions, humidity, and wind speed with a beautiful, responsive UI.
 
@@ -15,8 +15,5 @@ This project is a modern weather application built with React. It allows users t
 3. The background will update to match the weather condition.
 
 ## Live Demo
-[View the deployed app here (link coming soon)](https://your-deployment-link.vercel.app/)
+[Yugal’s Weather App (React) Live](https://assign14-mu.vercel.app/)
 
----
-
-**Author:** Yugal Lohani
