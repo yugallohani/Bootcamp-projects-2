@@ -14,5 +14,5 @@ This project is a simple and modern counter application built with React. It all
 3. Click the `⟳` button to reset the counter to zero.
 
 ## Live Demo
-Try the app live: [Counter App Live (React)](https://assign15-fawn.vercel.app/)
+Try the app live: [Counter App Live](https://assign15-fawn.vercel.app/)
 
