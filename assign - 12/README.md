@@ -10,4 +10,4 @@ This project is a modern, interactive Tic-Tac-Toe game built with HTML, CSS, and
 - **Modern UI:** Uses custom fonts, color themes, and subtle animations for a polished experience.
 
 ## Live Demo
-You can try the app live here: [Tic-Tac-Toe Live](#)
+You can try the app live here: [Tic-Tac-Toe Live](https://assign12-beta.vercel.app/)
