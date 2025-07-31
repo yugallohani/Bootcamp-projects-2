@@ -1,0 +1,68 @@
+/* src/App.css */
+.counter-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #5b657e;
+  margin-bottom: 2rem;
+}
+
+.count-display-wrapper {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #e0e5ec;
+  box-shadow: inset 8px 8px 16px #a3b1c6, 
+              inset -8px -8px 16px #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.count-display {
+  font-size: 7rem;
+  font-weight: 800;
+  color: #3b82f6; /* A vibrant blue for contrast */
+  transition: transform 0.2s ease-in-out;
+}
+
+.count-display.animate {
+  transform: scale(1.1);
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  background: #e0e5ec;
+  box-shadow: 8px 8px 16px #a3b1c6, 
+              -8px -8px 16px #ffffff;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #5b657e;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  color: #3b82f6;
+}
+
+.btn:active {
+  box-shadow: inset 4px 4px 8px #a3b1c6, 
+              inset -4px -4px 8px #ffffff;
+  font-size: 1.8rem;
+}
+
