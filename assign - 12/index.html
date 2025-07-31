@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yugal’s Tic-Tac-Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #1a1a2e;
+            --container-bg: #16213e;
+            --grid-bg: #0f3460;
+            --text-color: #e94560;
+            --x-color: #00ffdd;
+            --o-color: #ffdd00;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --font-main: 'Poppins', sans-serif;
+            --font-display: 'Orbitron', sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            background: var(--container-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin: 0;
+            color: #e94560;
+            text-shadow: 0 0 10px #e94560;
+        }
+
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+            background-color: var(--grid-bg);
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            background-color: var(--container-bg);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            font-family: var(--font-display);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            position: relative;
+        }
+
+        .cell:not(.x):not(.o):hover {
+            background-color: #1e3a8a;
+        }
+        
+        .cell.x, .cell.o {
+            cursor: not-allowed;
+        }
+
+        .cell.x {
+            color: var(--x-color);
+            text-shadow: 0 0 15px var(--x-color);
+        }
+
+        .cell.o {
+            color: var(--o-color);
+            text-shadow: 0 0 15px var(--o-color);
+        }
+        
+        .cell.win {
+            animation: win-pulse 0.8s infinite;
+        }
+
+        @keyframes win-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .game-status {
+            font-size: 1.5rem;
+            font-weight: 600;
+            min-height: 2.25rem;
+        }
+
+        .restart-button {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .restart-button:hover {
+            background-color: #ff7a8f;
+            transform: translateY(-2px);
+        }
+
+        .restart-button:active {
+            transform: translateY(1px);
+        }
+
+        @media (max-width: 600px) {
+            .game-container {
+                padding: 1rem;
+                gap: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+
+            .cell {
+                width: 80px;
+                height: 80px;
+                font-size: 3rem;
+            }
+
+            .game-status {
+                font-size: 1.2rem;
+            }
+
+            .restart-button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+             .cell {
+                width: 70px;
+                height: 70px;
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="game-container">
+        <h1>Yugal’s Tic-Tac-Toe</h1>
+        <div id="gameBoard" class="game-board">
+            <div class="cell" data-cell-index="0"></div>
+            <div class="cell" data-cell-index="1"></div>
+            <div class="cell" data-cell-index="2"></div>
+            <div class="cell" data-cell-index="3"></div>
+            <div class="cell" data-cell-index="4"></div>
+            <div class="cell" data-cell-index="5"></div>
+            <div class="cell" data-cell-index="6"></div>
+            <div class="cell" data-cell-index="7"></div>
+            <div class="cell" data-cell-index="8"></div>
+        </div>
+        <h2 id="gameStatus" class="game-status">Player X's Turn</h2>
+        <button id="restartButton" class="restart-button">Restart Game</button>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gameBoard = document.getElementById('gameBoard');
+            const gameStatus = document.getElementById('gameStatus');
+            const restartButton = document.getElementById('restartButton');
+            const cells = document.querySelectorAll('.cell');
+
+            let gameActive = true;
+            let currentPlayer = 'X';
+            let gameState = ["", "", "", "", "", "", "", "", ""];
+
+            const winningConditions = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+
+            const winningMessage = () => `Player ${currentPlayer} has won!`;
+            const drawMessage = () => `Game ended in a draw!`;
+            const currentPlayerTurn = () => `Player ${currentPlayer}'s Turn`;
+
+            gameStatus.innerHTML = currentPlayerTurn();
+
+            function handleCellClick(clickedCellEvent) {
+                const clickedCell = clickedCellEvent.target;
+                const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'));
+
+                if (gameState[clickedCellIndex] !== "" || !gameActive) {
+                    return;
+                }
+
+                handleCellPlayed(clickedCell, clickedCellIndex);
+                handleResultValidation();
+            }
+
+            function handleCellPlayed(clickedCell, clickedCellIndex) {
+                gameState[clickedCellIndex] = currentPlayer;
+                clickedCell.innerHTML = currentPlayer;
+                clickedCell.classList.add(currentPlayer.toLowerCase());
+            }
+
+            function handleResultValidation() {
+                let roundWon = false;
+                let winningLine = [];
+
+                for (let i = 0; i < winningConditions.length; i++) {
+                    const winCondition = winningConditions[i];
+                    const a = gameState[winCondition[0]];
+                    const b = gameState[winCondition[1]];
+                    const c = gameState[winCondition[2]];
+
+                    if (a === '' || b === '' || c === '') {
+                        continue;
+                    }
+                    if (a === b && b === c) {
+                        roundWon = true;
+                        winningLine = winCondition;
+                        break;
+                    }
+                }
+
+                if (roundWon) {
+                    gameStatus.innerHTML = winningMessage();
+                    gameActive = false;
+                    winningLine.forEach(index => {
+                        cells[index].classList.add('win');
+                    });
+                    return;
+                }
+
+                const roundDraw = !gameState.includes("");
+                if (roundDraw) {
+                    gameStatus.innerHTML = drawMessage();
+                    gameActive = false;
+                    return;
+                }
+
+                handlePlayerChange();
+            }
+
+            function handlePlayerChange() {
+                currentPlayer = currentPlayer === "X" ? "O" : "X";
+                gameStatus.innerHTML = currentPlayerTurn();
+            }
+
+            function handleRestartGame() {
+                gameActive = true;
+                currentPlayer = "X";
+                gameState = ["", "", "", "", "", "", "", "", ""];
+                gameStatus.innerHTML = currentPlayerTurn();
+                
+                cells.forEach(cell => {
+                    cell.innerHTML = "";
+                    cell.classList.remove('x', 'o', 'win');
+                });
+            }
+
+            cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+            restartButton.addEventListener('click', handleRestartGame);
+        });
+    </script>
+
+</body>
+</html>
