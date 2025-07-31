@@ -9,5 +9,5 @@ This project is a simple and modern counter application built using HTML, CSS, a
 - **Prevents Negative Values**: The counter does not go below zero.
 
 ## Live Demo
-You can try the app live here: [https://assign11-mu.vercel.app/](https://assign11-mu.vercel.app/)
+You can try the app live here: [Counter App Live](https://assign11-mu.vercel.app/)
 
