@@ -1,4 +1,4 @@
-# Assignment 16: React Login & Signup Page
+# Assignment 17: React Login & Signup Page
 
 This project is a modern authentication interface built with React. It features a login and signup page, routing between views, and a simple dashboard for logged-in users.
 
@@ -14,6 +14,6 @@ This project is a modern authentication interface built with React. It features 
 3. After logging in, you'll see the dashboard page.
 
 ## Live Demo
-Try the app live: [React Login & Signup Demo](https://assign16-login.vercel.app/)
+Try the app live: [React Login & Signup Demo](https://assign17-login.vercel.app/)
 
 
