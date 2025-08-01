@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --light-bg: #f9f9f9;
+  --light-text: #222;
+  --light-card-bg: #ffffff;
+  --light-button-bg: #e0e7ff;
+  --light-button-text: #4f46e5;
+  --light-button-hover-bg: #c7d2fe;
+
+  --dark-bg: #1e1e1e;
+  --dark-text: #f5f5f5;
+  --dark-card-bg: #2d2d2d;
+  --dark-button-bg: #5b21b6;
+  --dark-button-text: #f5f5f5;
+  --dark-button-hover-bg: #6d28d9;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+body.dark-theme {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.app {
+  text-align: center;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.light-theme .header {
+  background-color: var(--light-card-bg);
+}
+
+.dark-theme .header {
+  background-color: var(--dark-card-bg);
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.theme-toggle-btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px);
+}
+
+.light-theme .theme-toggle-btn {
+  background-color: var(--light-button-bg);
+  color: var(--light-button-text);
+}
+.light-theme .theme-toggle-btn:hover {
+  background-color: var(--light-button-hover-bg);
+}
+
+.dark-theme .theme-toggle-btn {
+  background-color: var(--dark-button-bg);
+  color: var(--dark-button-text);
+}
+.dark-theme .theme-toggle-btn:hover {
+  background-color: var(--dark-button-hover-bg);
+}
+
+.content-card {
+  margin: 4rem auto;
+  padding: 2rem;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.light-theme .content-card {
+  background-color: var(--light-card-bg);
+}
+
+.dark-theme .content-card {
+  background-color: var(--dark-card-bg);
+}
+
+.content-card h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
