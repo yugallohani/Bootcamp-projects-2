@@ -13,4 +13,4 @@ This project is a simple and modern React application that allows users to toggl
 2. Click the "Switch to Dark/Light Mode" button to toggle the theme.
 
 ## Live Demo
-Try the app live: [React Theme Toggle Demo](#)
+Try the app live: [React Theme Toggle Demo](https://assign18.vercel.app/)
