@@ -14,6 +14,6 @@ This project is a modern authentication interface built with React. It features 
 3. After logging in, you'll see the dashboard page.
 
 ## Live Demo
-Try the app live: [React Login & Signup Demo](https://assign17.vercel.app/login)
+Try the app live: [Login & Signup Demo](https://assign17.vercel.app/login)
 
 
