@@ -15,5 +15,5 @@ This project is a modern weather application built with React. It allows users t
 3. The background will update to match the weather condition.
 
 ## Live Demo
-[Yugal’s Weather App (React) Live](https://assign14-mu.vercel.app/)
+[Weather App (React) Live](https://assign14-mu.vercel.app/)
 
