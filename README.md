@@ -9,6 +9,7 @@ This repository contains assignments for Yugal Lohani's Bootcamp. Each assignmen
 - **assign_14:** [Weather App (React)](https://assign14-chi.vercel.app/)
 - **assign_15:** [Counter App (React)](https://assign15-fawn.vercel.app/)
 - **assign_18:** [Theme Toggle Demo (React)](https://assign18.vercel.app/)
+- **assign_17:** [Login & Signup Demo (React)](https://assign17.vercel.app/login)
 
 For assignments 1 to 10, visit this repository: [Bootcamp-Projects](https://github.com/yugallohani/Bootcamp-Projects)
 
