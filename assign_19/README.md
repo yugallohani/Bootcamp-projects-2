@@ -16,5 +16,5 @@ This project is a React application that lets users browse a list of Indian food
 4. View your total price at the bottom of the cart.
 
 ## Live Demo
-Try the app live: [React Add to Cart Demo](#)
+Try the app live: [Add to Cart Demo (React)](https://assign19.vercel.app/)
 
